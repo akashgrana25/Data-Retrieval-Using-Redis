@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+	<title>Welcome</title>
+	</head>
+		<body>
+		<h1>Hello</h1>
+
+
+		<form action="../execution_time" method="POST"
+			  enctype = "multipart/form-data">
+			<h1>RDS Time: </h1>
+			<input type="submit" value="Get Time"/>
+			<br>
+			<h1>Processing time is : {{data}}</h1>
+			<br>
+
+		</form>
+        <br>
+
+        <form action="../redis_time" method="POST"
+			  enctype = "multipart/form-data">
+			<h1>Redis_Time:</h1>
+			<input type="submit" value="Get Time"/>
+			<br>
+			<h1>Processing time is : {{result}}</h1>
+
+		</form>
+        <br>
+
+		<form action = "../table_data" method="POST"
+				enctype = "multipart/form-data">
+			<h1>Query Data:</h1>
+			<input type="submit" value="Get Data"/>
+			<br>
+			<h3> ----------Data----------</h3>
+
+			<table border="2">
+				<tr>
+					<th>Years</th>
+					<th>City</th>
+					<th>All Deaths</th>
+				</tr>
+				 {% for row in item %}
+				<tr align="center">
+					<td>{{ row[0] }}</td>
+					<td>{{ row[5] }}</td>
+					<td>{{ row[7]}}</td>
+				</tr>
+			 {% endfor %}
+			</table>
+
+			<!--<h1>{{item}}</h1>-->
+
+
+
+		<br />
+        </form>
+	</body>
+</html>

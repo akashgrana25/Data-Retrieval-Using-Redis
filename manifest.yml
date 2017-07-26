@@ -1,0 +1,10 @@
+applications:
+- path: .
+  memory: 128M
+  instances: 1
+  domain: mybluemix.net
+  name: Cloud Assignment 1
+  host: Akashrana25
+  disk_quota: 1024M
+  services:
+  - Object Storage-f2
